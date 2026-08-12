@@ -16,7 +16,7 @@ familiares.forEach(function (familiar) {
     // En la primera vuelta, familiar = { nombre: "María", ... }
     // En la segunda vuelta, familiar = { nombre: "Juan", ... }
     // Y así sucesivamente...
-    console.log(familiar.edad);
+    // console.log(familiar.edad);
 });
 
 //FILTER
@@ -28,8 +28,8 @@ const mayoresDeEdad = familiares.filter(function(familiar) {
     return familiar.edad >= 18;
 });
 
-console.log(familiares)
-console.log(mayoresDeEdad);
+// console.log(familiares)
+// console.log(mayoresDeEdad);
 
 //MAP
 // Ejemplo: Crear un nuevo array con los nombres completos
@@ -38,10 +38,10 @@ const nombresCompletos = familiares.map(function(familiar) {
     return familiar.nombre + " " + familiar.apellido;
 });
 
-console.log(nombresCompletos);
+// console.log(nombresCompletos);
 
 const familiarUno = nombresCompletos[2]
-console.log(familiarUno)
+// console.log(familiarUno)
 
 const edadesEn10Anios = familiares.map(function(familiar) {
     return {
@@ -51,4 +51,27 @@ const edadesEn10Anios = familiares.map(function(familiar) {
     };
 });
 
-console.log(edadesEn10Anios)
+// console.log(edadesEn10Anios)
+
+// DOM
+// document
+//console.log(document.title)
+
+
+//getELementById
+const emailUsuario = document.getElementById("email");
+const contraseñaUsuario = document.getElementById("contraseña");
+
+const datosUsuarioLogin = () => {
+    if (emailUsuario.value === "lunama.cecilia@gmail.com"){
+        console.error("ESTE MAIL YA ESTÁ LOGUEADO");
+        alert("Intenta con otro email");
+    }
+
+    if (contraseñaUsuario.value.length < 8) {
+        console.warn("La contraseña es demasiado corta");
+        alert("Ingresa una contraseña más larga");
+        return;
+    }
+    console.log("Logueo function");
+}
